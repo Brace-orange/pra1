@@ -1,15 +1,25 @@
 <template>
-  <div>
-   a
+  <div class="recommend">
+    <div class="recommend_content">
+     <slider>
+       <div v-for="(item) in sliders" :key="item.id">
+         <router-link tag="a" :to="item.linkUrl">
+           <img :src="item.picUrl">
+         </router-link>
+       </div>
+     </slider>
+    </div>
   </div>
 </template>
 
 <script>
 import {getRecommend} from '../../api/recommend.js'
 import {ERR_OK} from '../../api/config.js'
+import Slider from 'base/slider/slider'
 export default {
   data () {
     return {
+      sliders: []
     }
   },
   created () {
@@ -17,14 +27,15 @@ export default {
   },
   methods: {
     _getRecommend () {
-      alert(111)
       getRecommend().then((res) => {
-        alert(222)
         if (res.code === ERR_OK) {
-          console.log(res.data.slider)
+          this.sliders = res.data.slider
         }
       })
     }
+  },
+  components: {
+    Slider
   }
 
 }

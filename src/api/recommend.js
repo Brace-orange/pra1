@@ -3,7 +3,6 @@ import api from '../api/api'
 import {commonParams, option} from '../api/config'
 
 export function getRecommend () {
-  alert(332)
   const url = api.recommond
   const data = Object.assign({}, commonParams, {
     uin: 3073492730,

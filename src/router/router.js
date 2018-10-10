@@ -1,6 +1,5 @@
 const routers = [
   'comone'
-
 ]
 
 const coms = [
@@ -29,7 +28,6 @@ const comms = coms.map((com) => {
     component: async () => await import(`../components/${com}/index.vue`)
   }
 })
-
 
 export default [
   {
