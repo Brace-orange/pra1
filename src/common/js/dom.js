@@ -1,5 +1,5 @@
 export function addClassName (el, className) {
-  if (el.hasClassName) {
+  if (hasClassName(el, className)) {
     return
   }
   let newClassName = el.className.split(' ')

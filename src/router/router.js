@@ -3,7 +3,7 @@ const routers = [
 ]
 
 const coms = [
-  'tag', 'recommend', 'singer', 'rank', 'search'
+  'tag', 'recommend', 'singer', 'rank', 'search', 'pro'
 ]
 
 const routes = routers.map(router => {

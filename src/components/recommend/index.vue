@@ -3,9 +3,9 @@
     <div class="recommend_content">
      <slider>
        <div v-for="(item) in sliders" :key="item.id">
-         <router-link tag="a" :to="item.linkUrl">
+         <a :to="item.linkUrl">
            <img :src="item.picUrl">
-         </router-link>
+         </a>
        </div>
      </slider>
     </div>
@@ -31,6 +31,7 @@ export default {
         if (res.code === ERR_OK) {
           this.sliders = res.data.slider
         }
+        console.log(res)
       })
     }
   },
